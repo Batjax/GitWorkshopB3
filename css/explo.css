@@ -1,0 +1,14 @@
+/* style the elements with CSS */
+#pleaserotate-graphic{
+    fill: rgb(10,83,124);
+}
+
+#pleaserotate-backdrop {
+    color: #000;
+    background-color: #fff;
+}
+
+/* Style boutons */
+button #changer_bat{
+    position: absolute;
+}

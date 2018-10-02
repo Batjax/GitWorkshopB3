@@ -30,6 +30,6 @@
             $nom = $_SESSION['nom'];
         ?>
     </body>
-    <img style="width:100%; height:100%;" src="images/exploration/leclair---2e-etage.jpg"/>
-    <button type="button">Changer </button>
+    <img style="width:100%; height:100%;" src="images/exploration/Leclair---Incubateur.jpg"/>
+    <button type="button" id="changer_bat">Changer de bâtiment</button>
 </html>
