@@ -1,24 +1,7 @@
 <!doctype html>
 <html>
-    <?php include"header.html" ?>    
-    <!--<script src="js/pleaserotate.min.js?ver=0.2" type="text/javascript"></script>-->
-    <style>
-        /* style the elements with CSS */
-        #pleaserotate-graphic{
-            fill: rgb(10,83,124);
-        }
-
-        #pleaserotate-backdrop {
-            color: #000;
-            background-color: #fff;
-        }
-        /*            body { 
-                        background: url(images/Campus-exterieur-.jpg) no-repeat center center fixed; 
-                        background-position: center;  Center the image 
-                        background-repeat: no-repeat;  Do not repeat the image 
-                        background-size: 100% auto;  Resize the background image to cover the entire container 
-                    }*/
-    </style>
+    <?php include"header.html" ?>  
+   
 </head>
 <body>
     <?php include"navbar.html" ?>
