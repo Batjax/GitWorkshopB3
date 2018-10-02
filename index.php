@@ -23,36 +23,29 @@
 <body>
     <?php include"navbar.html" ?>
     <div>
-        <section class="site-section">
-            <div class="container">
-                <div class="row align-items-center">
-
-                    <div class="col-md-12">
-
-                        <div>
-                            <div class="heading">
-                                <h2>Bienvenu dans HEP Explore</h2>
-                            </div>
-                            <div class="text mb-12">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam nisi eos accusantium eligendi velit deleniti nihil ad deserunt rerum incidunt nulla nemo eius molestiae architecto beatae asperiores doloribus animi.</p>
-                            </div>
-                            <div>
-                                <div style="float:left;">
-                                    <a href="visite.php" class="btn btn-primary reverse py-2 px-4">Explorez le campus</a>
-                                </div>
-                                <div style="float:right">
-                                    <a href="info.html" class="btn btn-primary reverse py-2 px-4">Informations sur le campus</a>
-                                </div>                                
-                            </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div>
+                        <div class="heading">
+                            <h2>Bienvenu dans HEP Explore</h2>
                         </div>
-
+                        <div>
+                            <div style="float:center;">
+                                <a href="visite.php" class="btn btn-primary reverse py-2 px-3">Explorez le campus</a>
+                            </div>
+                            <br>
+                            <p>Dans « Explorez le campus » vous pourrez explorer de manière interactive le campus Renée-Cassin et ses environs accompagné par Hep l’étudiant.</p> 
+                            <div style="float:center">
+                                <a href="info.html" class="btn btn-primary reverse py-2 px-3">Informations sur le campus</a>
+                            </div>                                
+                            <br>
+                            <p>Dans « Informations sur le campus » vous trouverez toutes les informations liées au campus HEP René-Cassin : écoles et centres de formation, espace dédié aux incubateurs, événements culturels, conférence et bien d’autres ...</p> 
+                        </div>
                     </div>
-
                 </div>
-
             </div>
-        </section>           
-        
+        </div>
     </div>
     <?php include"footer.html" ?> 
 </body>
