@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <?php include"header.html" ?>    
-    <script src="js/pleaserotate.min.js?ver=0.2" type="text/javascript"></script>
+    <!--<script src="js/pleaserotate.min.js?ver=0.2" type="text/javascript"></script>-->
     <style>
         /* style the elements with CSS */
         #pleaserotate-graphic{
