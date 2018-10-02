@@ -10,7 +10,7 @@
     <body>
         <?php
         $check = 0;
-        if(isset($_POST['prenom'])){
+        if(isset($_POST['mail'])){
             $check = 1;
         }
         if(isset($_POST['reco'])){
@@ -89,13 +89,19 @@
             if(isset($_POST['prenom'])){
                 $_SESSION['type'] = $_POST['radio'];
                 $type = $_SESSION['type'];
-                $_SESSION['prenom'] = $_POST['prenom'];
-                $prenom = $_SESSION['prenom'];
+                if(isset($_POST['prenom'])){
+                    $_SESSION['prenom'] = $_POST['prenom'];
+                    $prenom = $_SESSION['prenom'];
+                }else{
+                    $prenom = null;
+                }
                 $_SESSION['nom'] = $_POST['nom'];
                 $nom = $_SESSION['nom'];
-                if(isset($_POST['prenom'])){
+                if(isset($_POST['tel'])){
                     $_SESSION['tel'] = $_POST['tel'];
                     $tel = $_SESSION['tel'];
+                }else{
+                    $tel = null;
                 }
                 $_SESSION['mail'] = $_POST['mail'];
                 $mail = $_SESSION['mail'];
@@ -103,7 +109,7 @@
                 $sql = "INSERT INTO workshop VALUES (\"$mail\", \"$type\", \"$prenom\", \"$nom\", \"$tel\", 0)";
                 $req = $bdd->query($sql);
 
-                echo "Bonjour ".$_SESSION['prenom'].", tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
+                echo "Tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
                     points de vues pour découvrir toutes les salles importantes. Vous pourrez progresser en appuyant sur les flèches pour avancer.
                     Votre score augmente en fonction de votre progression et il sera sauvegardé dans un tableau des scores.<br>";
                 echo "<form action='exploration.php' method='post' name='rtr'><input type='submit' name='start' value='Commencer la visite'/></form>";
