@@ -1,6 +1,10 @@
-<?php session_start(); ?>
-<html>
+<?php
+    session_start();
+    require "connexion.php";
+?>
+<html lang="fr">
     <head>
+        <meta charset="utf-8">
         <title>HEP Explore</title>
     </head>
     <body>
@@ -75,14 +79,23 @@
         <?php }else{
             if(isset($_POST['prenom'])){
                 $_SESSION['type'] = $_POST['radio'];
+                $type = $_SESSION['type'];
                 $_SESSION['prenom'] = $_POST['prenom'];
+                $prenom = $_SESSION['prenom'];
                 $_SESSION['nom'] = $_POST['nom'];
+                $nom = $_SESSION['nom'];
                 if(isset($_POST['prenom'])){
                     $_SESSION['tel'] = $_POST['tel'];
+                    $tel = $_SESSION['tel'];
                 }
                 $_SESSION['mail'] = $_POST['mail'];
+                $mail = $_SESSION['mail'];
+
+                echo $sql = "INSERT INTO workshop VALUES (\"$mail\", \"$type\", \"$prenom\", \"$nom\", \"$tel\", 0)";
+                $req = $bdd->query($sql);
+                var_dump($req);
             }elseif(isset($_POST['reco'])){
-                
+
             }else{
             /*echo "Bonjour ".$_SESSION['prenom'].", tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
             points de vues pour découvrir toutes les salles importantes. Vous pourrez progresser en appuyant sur les flèches pour avancer.
