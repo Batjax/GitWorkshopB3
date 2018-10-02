@@ -13,7 +13,7 @@
             echo "Bienvenue sur notre jeu !";
         ?>
         <div>
-            <form method="POST" action="visite.php">
+            <form method="POST" action="visite.php" name="infos">
                 <fieldset>
                     <legend>Qui êtes vous ?</legend>
                     <div>
@@ -59,22 +59,24 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" id="submit" value="Envoyer"/>
+                            <input type="submit" id="submit" name="sub" value="Envoyer"/>
                         </td>
                     </tr>
                 </table>
-                <br>
-                <table>
-                    <tr>
-                        <td><b>Vous avez déjà une progression ?</b></td>
-                    </tr>
-                    <form method="POST" action="visite.php">
+            </form>
+            <br>
+            <table>
+                <tr>
+                    <td><b>Vous avez déjà une progression ?</b></td>
+                </tr>
+                <form method="POST" action="visite.php" name="reconex">
                         <tr>
                             <td>E-mail</td>
-                            <td><input type="text" id="reco" name="reco"/></td>
+                            <td><input type="text" id="reco" name="reco" required/></td>
                         </tr>
-                    </form>
-            </form>
+                        <tr><td><input type="submit" name="subReco" value="Récupérer la progression")</td></tr>
+                </form>
+            </table>
         </div>
         <?php }else{
             if(isset($_POST['prenom'])){
