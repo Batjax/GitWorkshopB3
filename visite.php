@@ -9,8 +9,8 @@
     </head>
     <body>
         <?php
-        echo "Bienvenue sur notre jeu !";
         if(!isset($_POST['prenom'])){
+            echo "Bienvenue sur notre jeu !";
         ?>
         <div>
             <form method="POST" action="visite.php">
@@ -93,13 +93,34 @@
 
                 echo $sql = "INSERT INTO workshop VALUES (\"$mail\", \"$type\", \"$prenom\", \"$nom\", \"$tel\", 0)";
                 $req = $bdd->query($sql);
-                var_dump($req);
+
+                echo "Bonjour ".$_SESSION['prenom'].", tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
+                    points de vues pour découvrir toutes les salles importantes. Vous pourrez progresser en appuyant sur les flèches pour avancer.
+                    Votre score augmente en fonction de votre progression et il sera sauvegardé dans un tableau des scores.<br>";
+
             }elseif(isset($_POST['reco'])){
+                $mail = $_POST['reco'];
+                $sql = "SELECT * FROM workshop WHERE mail=$mail";
+                $req = $bdd->query($sql);
+                $res = $req->fetch_assoc();
+                $prenom = $res['prenom'];
+                $_SESSION['prenom'] = $prenom;
+                $nom = $res['nom'];
+                $_SESSION['nom'] = $nom;
+                $tel = $res['tel'];
+                $_SESSION['tel'] = $tel;
+                $score = $res['score'];
+                $_SESSION['score'] = $score;
+                $type = $res['type'];
+                $_SESSION['type'] = $type;
+
+                echo "Bonjour ".$_SESSION['prenom'].", tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
+                points de vues pour découvrir toutes les salles importantes. Vous pourrez progresser en appuyant sur les flèches pour avancer.
+                Votre score augmente en fonction de votre progression et il sera sauvegardé dans un tableau des scores.<br>";
+                echo "<br>Ton score actuel est de ".$_SESSION['score']." pts";
 
             }else{
-            /*echo "Bonjour ".$_SESSION['prenom'].", tu peux maintenant commencer à explorer le campus. Cette exploration est composée de différents
-            points de vues pour découvrir toutes les salles importantes. Vous pourrez progresser en appuyant sur les flèches pour avancer.
-            Votre score augmente en fonction de votre progression et il sera sauvegardé dans un tableau des scores.<br>";*/
+            
             }
         }?>
     </body>
