@@ -43,7 +43,7 @@
                     <tr>
                         <td>Prénom</td>
                         <td>
-                            <input type="text" id="prenom" name="prenom" required/>
+                            <input type="text" id="prenom" name="prenom"/>
                         </td>
                     </tr>
                     <tr>
