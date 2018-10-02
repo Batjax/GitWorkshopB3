@@ -36,7 +36,7 @@
                                 <a href="visite.php" class="btn btn-primary reverse py-2 px-3">Explorez le campus</a>
                             </div>
                             <br>
-                            <p>Ici vous pourrez explorer de manière interactive le campus Renée-Cassin et ses environs accompagné par Hep l’étudiant.</p> 
+                            <p>Ici vous pourrez explorer de manière interactive le campus Renée-Cassin avec ses deux bâtiments.</p> 
                             <br>
                             <div style="text-align: center;">
                                 <a href="info.html" class="btn btn-primary reverse py-2 px-3">Informations sur le campus</a>
