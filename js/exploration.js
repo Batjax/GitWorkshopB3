@@ -47,12 +47,19 @@ function changerImage(id_fleche){
         case "http://web-epsi-lyon.com/beydant/WorkshopB3/images/exploration/berthet-hall.jpg":
         switch(id_fleche) {
             case "fleche1":
+            //Infotheque
                 balise.src = "images/exploration/berthet-infotheque.jpg";
-                fleche1.top = "20%";
-                fleche1.left = "60%";
+                fleche2.visibility = "hidden";
+                fleche3.visibility = "hidden";
+                fleche4.visibility = "hidden";
+                // Retour hall ?
+                fleche1.top = "80%";
+                fleche1.left = "95%";
 
-                pointeur_vis1.top = "70%";
-                pointeur_vis1.left = "5%";
+                pointeur_vis1.top = "30%";
+                pointeur_vis1.left = "2%";
+                pointeur_vis2.top = "56%";
+                pointeur_vis2.left = "19%";
                 break;
             case "fleche2":
                 balise.src = "images/exploration/berthet-facade.jpg";
@@ -69,36 +76,45 @@ function changerImage(id_fleche){
                 pointeur_vis2.left = "75%";
                 break;
             case "fleche3":
+            //admin
                 balise.src = "images/exploration/berthet-administration.jpg";
                 fleche3.visibility = "hidden";
                 fleche4.visibility = "hidden";
                 pointeur_vis2.visibility = "hidden";
                 //
                 fleche1.top = "70%";
-                fleche1.left = "0";
+                fleche1.left = "5%";
+                fleche1.transform = "rotate(180deg)";
                 //
                 fleche2.top = "70%";
-                fleche2.left = "0";
+                fleche2.left = "85%";
+                fleche2.transform = "rotate(90deg)";
+
+                pointeur_vis1.top = "40%";
+                pointeur_vis1.left = "55%";
                 break;
             case "fleche4":
                 balise.src = "images/exploration/berthet-ZPR.jpg";
                 pointeur_vis2.visibility = "hidden";
                 //
-                fleche1.top = "60%";
-                fleche1.left = "30%";
+                fleche1.top = "50%";
+                fleche1.left = "20%";
                 fleche1.transform = "rotate(180deg)";
                 //
                 fleche2.top = "55%";
                 fleche2.left = "40%";
-                //fleche2.transform = "rotate(180deg)";
+                fleche2.transform = "";
                 //
                 fleche3.top = "55%";
-                fleche3.left = "75%";
+                fleche3.left = "70%";
                 fleche3.transform = "rotate(180deg)";
                 //
                 fleche4.top = "60%";
-                fleche4.left = "80%";
+                fleche4.left = "85%";
                 fleche4.transform = "rotate(90deg)";
+
+                pointeur_vis1.top = "63%";
+                pointeur_vis1.left = "52%";
                 break;
         }
         break;
