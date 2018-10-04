@@ -20,19 +20,13 @@ require "connexion.php";
 
         <!-- Theme Style -->
         <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/exploration.js"></script>
+        <script type="text/javascript" src="js/exploration.js"></script>       
         <script>
-            var doc = window.document;
-            var docEl = doc.documentElement;
-
-            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-            if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-                requestFullScreen.call(docEl);
-            } else {
-                cancelFullScreen.call(doc);
-            }
+            $(document).ready(function () {
+                $('button .btn').on('click touchstart', function () {
+                    changerImage(this.id)
+                });
+            });
         </script>
     </head>
     <style>
@@ -44,35 +38,26 @@ require "connexion.php";
 
         /* Make the image responsive */
         .container_2 img {
-            width: 100%;
+            width: 100%;          
             height: auto;
         }
 
         /* Style the button and place it in the middle of the container/image */
-        .container_2 .btn {
-            position: absolute;
-            top: 40%;
-            left: 20%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            background-color: #555;
-            color: white;
-            font-size: 16px;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
+        .btn { 
+            background-color: Transparent;
+            width: 12%;
+            cursor: pointer; 
+            overflow: hidden;
+            outline:none;
         }
 
-        .container_2 .btn:hover {
-            background-color: black;
-        }
         .logo {
             position: relative;
             width: 100%;
         }
 
         .onglet {
+            font-size: 15px;
             padding: -2px;
             margin: -1px;
             border-top-left-radius : 18px;
@@ -81,20 +66,87 @@ require "connexion.php";
             background-color:  rgb(10,83,124) ;
             color : white;
         }
+        .changer_bat{
+            background-color:  rgb(10,83,124) ;
+            color : white;
+        }
+        
+        .fleche1{
+            position: absolute;
+            transform: rotate(45deg);
+            top: 85%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        .fleche2{
+            position: absolute;
+            top: 65%;
+            left: 65%;
+            visibility: hidden;
+        }
+        .fleche3{
+            position: absolute;
+            top: 65%;
+            left: 65%;
+            visibility: hidden;
+        }
+        .fleche4{
+            position: absolute;
+            top: 65%;
+            left: 65%;
+            visibility: hidden;
+        }
+
+        .pointeur_vis1{
+            position: absolute;
+            top: 30%;
+            left: 15%;
+            visibility: visible;
+        }
+        .pointeur_vis2{
+            position: absolute;
+            top: 65%;
+            left: 80%;
+            visibility: visible;
+        }
+        .pointeur_vis3{
+            position: absolute;
+            top: 65%;
+            left: 65%;
+            visibility: hidden;
+        }
+
+        .rotateD{
+            transform: rotate(90deg);
+        }
+        .rotateG{
+            transform: rotate(270deg);
+        }
+        .rotateB{
+            transform: rotate(180deg);
+        }
     </style>
-    <?php include"navbar_game.html" ?>
     <body>
+        <?php include"navbar_game.html" ?>
         <?php
         $score = $_SESSION['score'];
         $mail = $_SESSION['mail'];
-        $prenom = $_SESSION['prenom'];
         $nom = $_SESSION['nom'];
         ?>
         <div class="container_2">
-            <img src="images/exploration/Leclair---Incubateur.jpg">
-            <button class="btn">Button</button>
+            <img id="img_explo" src="images/exploration/berthet-facade.jpg" alt=""/>
+            <button id="fleche1" onclick="changerImage(this.id)" class="fleche1 btn"><img class="img_icon rotateD" src="images/exploration/pictos/direction.png" alt=""/></button>
+            <button id="fleche2" onclick="changerImage(this.id)" class="fleche2 btn"><img class="img_icon" src="images/exploration/pictos/direction.png" alt=""/></button>
+            <button id="fleche3" onclick="changerImage(this.id)" class="fleche3 btn"><img class="img_icon" src="images/exploration/pictos/direction.png" alt=""/></button>
+            <button id="fleche4" onclick="changerImage(this.id)" class="fleche4 btn"><img class="img_icon" src="images/exploration/pictos/direction.png" alt=""/></button>
+
+            <button id="pointeur_vis1" class="pointeur_vis1 btn"><img class="img_icon" src="images/exploration/pictos/emplacement.png" alt=""/></button>
+            <button id="pointeur_vis2" class="pointeur_vis2 btn"><img class="img_icon" src="images/exploration/pictos/emplacement.png" alt=""/></button>
+            <button id="pointeur_vis3" class="pointeur_vis3 btn"><img class="img_icon" src="images/exploration/pictos/emplacement.png" alt=""/></button>
         </div>
     </body>
-    <!--<img style="width:100%; height:100%;" src="images/exploration/Leclair---Incubateur.jpg"/>-->
-    <button type="button" id="changer_bat">Changer de bâtiment</button>
+    <p>
+        <button type="button" class="changer_bat" id="changer_bat">Changer de bâtiment</button>       
+    </p>
 </html>
